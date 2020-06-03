@@ -1,0 +1,45 @@
+@import "./config.scss";
+@import "./normalize.scss";
+@import "./elementui.scss";
+
+.full-left {
+  float: left;
+}
+
+.full-right {
+  float: right;
+}
+
+@for $i from 1 through 50 {
+  .margin-top-#{$i+1} {
+    margin-top: ($i+1px)
+  }
+
+  .margin-bottom-#{$i+1} {
+    margin-top: ($i+1px)
+  }
+
+  .margin-left-#{$i+1} {
+    margin-top: ($i+1px)
+  }
+
+  .margin-right-#{$i+1} {
+    margin-top: ($i+1px)
+  }
+
+  .padding-top-#{$i+1} {
+    margin-top: ($i+1px)
+  }
+
+  .padding-bottom-#{$i+1} {
+    margin-top: ($i+1px)
+  }
+
+  .padding-left-#{$i+1} {
+    margin-top: ($i+1px)
+  }
+
+  .padding-right-#{$i+1} {
+    margin-top: ($i+1px)
+  }
+}

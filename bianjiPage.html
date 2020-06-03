@@ -1,0 +1,103 @@
+<html>
+<head>
+<title>商品修改</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style type="text/css">
+	body{ font-family: "微软雅黑"; background-color: #EDEDED; }
+	h2{ text-align: center;font-size:26px; }
+	table{ margin: 30px auto; text-align: center; border-collapse:collapse; width:50%; }
+	td, th{ padding: 7px;font-size:18px;}
+	hr{ margin-bottom:20px; border:1px solid #aaa; }
+	input,select,textarea{ width:284px; height:30px; background:#EDEDED; border:1px solid #999; text-indent:5px; font-size:18px; }
+	input[type='submit']{ width:130px; height:36px; cursor:pointer; border-radius:5px 5px 5px 5px; background:#ddd; }
+	select{text-indent:0px;}
+	textarea{height:100px;font-size:22px;}
+</style>
+</head>
+<body><!-- body-start  -->
+
+<h2>商品修改</h2>
+<hr/>
+<form action="">
+	<!-- hidden隐藏域,在提交表单时连door.id一起提交 -->
+	<input type="hidden" name="id" value="${ door.id }"/>
+	<table border="1">
+		<tr>
+			<td width="30%">商品名称</td>
+			<td>
+				<input type="text" name="shangpinname" 
+									/>
+			</td>
+		</tr>
+		<tr>
+			<td>商品价格</td>
+			<td>
+				<input type="text" name="price" 
+									/>
+			</td>
+		</tr>
+		<tr>
+			<td>商品图片</td>
+			<td>
+				<img alt="" src="‪E:\a\1.jpg">
+			</td>
+		</tr>
+		<tr>
+			<td>商品类别</td>
+			<td>
+		<div>
+            <select id="type" name="type">
+                <option value="phone">手机</option>
+                <option value="pc">电脑</option>
+            </select>
+        </div>
+			</td>
+		</tr>
+		<tr>
+			<td>商品品牌</td>
+			<td>
+				<input id="" list="browsers" name="pinpai">
+            <datalist id="browsers">
+            </datalist>
+            </select>
+			</td>
+		</tr>
+		<tr>
+			<td>发布人</td>
+			<td>
+				<input type="text" name="user" 
+									/>
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="2">
+				<input type="submit" value="提	交" />
+			</td>
+		</tr>
+	</table>
+</form>
+<script type="text/javascript" src="/static/EasyUi/jquery.min.js"></script>
+<script type="text/javascript" src="/static/EasyUi/jquery.easyui.min.js"></script>
+
+<script type="text/javascript">
+
+	var data = [{
+	    name: "传智播客"
+	    
+	},{
+	    name: "黑马程序员"
+	},{
+	    name: "传智前端学院"
+	}];
+	for( var i = 0; i < data.length; i++ ) {
+	$("#browsers").append('<option value="'+data[i].name+'">'+data[i].name+'</option>');
+	}
+
+
+
+</script>
+
+
+</body><!-- body-end  -->
+</html>

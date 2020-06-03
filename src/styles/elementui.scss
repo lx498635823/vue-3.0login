@@ -1,0 +1,46 @@
+// 修改element ui的样式
+
+//修改一级菜单中元素被选中时的样式
+.el-submenu{
+  &.is-active.is-opened .el-submenu__title{ background-color: $mainColor !important;}
+}
+
+//修改子级元素选中时的样式
+.el-submenu .el-menu-item {
+  font-size: 14px;
+  padding-left: 50px !important;
+  &.is-active {background-color: rgba(245,108,108,.2) !important ;}
+}
+
+//菜单栏收起后选中时的颜色改变
+.close{
+  .el-submenu {
+    &.is-opened {
+      > .el-submenu__title {
+        background-color: $mainColor !important;
+      }
+    }
+  }
+}
+
+.el-menu--vertical{
+  .el-menu{
+    background-color: $mainColor !important;
+  }
+  .el-menu-item{line-height: 56px;}
+  .el-menu-item:hover{
+    background-color: $mainColor !important;
+  }
+}
+//table 样式居中
+
+div.el-table {
+  th, td{text-align: center;}
+  th {
+    font-weight: bold;
+    color: #344a5f;
+  }
+  td {
+    font-size: 14px;
+  }
+}

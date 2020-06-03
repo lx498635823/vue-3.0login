@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户与商品列表</title>
+    <script type="text/javascript" src="/static/EasyUi/jquery.min.js"></script>
+	<script type="text/javascript" src="/static/EasyUi/jquery.easyui.min.js"></script>
+    <style>
+        * { padding: 0; margin: 0; }
+        table {
+        	margin: 0 auto;
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: 1px solid #c0c0c0;
+        }
+
+        th,td {
+            border: 1px solid #d0d0d0;
+            color: #404060;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #09c;
+            font: bold 16px "微软雅黑";
+            color: #fff;
+        }
+
+        td {
+            font: 14px "微软雅黑";
+        }
+        tbody tr {
+            background-color: #f0f0f0;
+        }
+        tbody tr:hover {
+            cursor: pointer;
+            background-color: #fafafa;
+        }
+    </style>
+    <script>
+    //数据用AJAX传过来
+    	var userData = [{
+    		username:"admin",
+    		createtime:"2020.1.2"
+    	}];
+    	$.ajax({ url: "/findAll", 
+    		success: function(result){
+    			  $("#Item").empty();
+    	            for( var i = 0; i < result.data.length; i++ ) {
+    	                //动态创建一个tr行标签,并且转换成jQuery对象
+    	                
+    	                var $trTemp = $("<tr></tr>");
+
+    	                //往行里面追加 td单元格
+    	              //  $trTemp.append("<input type='radio' id='id' name='id' value='"+result.data[i].id+"'/>");
+    	                $trTemp.append("<td>"+ result.data[i].shangpinname +"</td>");
+    	                $trTemp.append("<td>"+ result.data[i].price +"</td>");
+    	                $trTemp.append("<td>"+ result.data[i].type +"</td>");
+    	                $trTemp.append("<td>"+ result.data[i].user +"</td>");
+    	                $trTemp.appendTo("#Item");
+    	            }
+           
+            
+          }});
+
+        $(function(){
+        	$("#User").empty();
+                //动态创建一个tr行标签,并且转换成jQuery对象
+                var $trTemp = $("<tr></tr>");
+                for( var i = 0; i < userData.length; i++ ) {
+                //往行里面追加 td单元格
+                $trTemp.append("<td>"+ userData[i].username +"</td>");
+                $trTemp.append("<td>"+ userData[i].createtime +"</td>");
+                // $("#J_TbData").append($trTemp);
+                $trTemp.appendTo("#User");
+            }
+        	
+                $("#bianji").click(function(){
+                	$(window).attr('location','/bianji');
+                	});
+                $("#xiangqing").click(function(){
+                	$(window).attr('location','/xiangqing');
+                	});
+        
+            
+        });
+    </script>
+</head>
+<body>
+<br>
+<br>
+<h1 align="center">用户列表</h1>
+<br>
+    <table>
+        <thead>
+            <tr>
+                <th>用户名</th>
+                <th>创建时间</th>
+            </tr>
+        </thead>
+        <tbody id="User">
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <br>
+    <br>
+<br>
+<h1 align="center">商品列表</h1>
+
+<br>
+    <table>
+        <thead>
+            <tr>
+                <th>商品名称</th>
+                <th>价格</th>
+                <th>商品类型</th>
+                <th>发布人</th>
+            </tr>
+        </thead>
+        <tbody id="Item">
+        </tbody>
+    </table>
+
+    <br>
+</body>
+</html>

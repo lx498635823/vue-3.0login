@@ -1,0 +1,33 @@
+//菜单页（首页）
+//菜单宽度
+$navWidth:250px;
+$navWidthMin:63px;
+$navMenuMin: 64px;
+$layoutHeader: 75px;
+//菜单高度
+$navHeigth:75px;
+//侧边栏选中主颜色
+$mainColor:#f56c6c;
+
+//
+@mixin webkit($type, $value){
+  -webkit-#{$type} : $value;
+  -moz-#{$type} : $value;
+  -o-#{$type} : $value;
+  -ms-#{$type} : $value;
+  #{$type} : $value;
+}
+//消息页面表单设置
+@mixin labelDom($align,$width,$line-height:"normal"){
+  label{
+     // float :left 会自动适应宽度为父标签的宽度
+    float:left;
+     //可以让字体高度居中
+    line-height:$line-height +px;
+    text-align: $align;
+    width:$width +px;
+  }
+  .warp-content{
+    margin-left: $width +px;
+  }
+}
